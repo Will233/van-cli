@@ -28,6 +28,18 @@ const CSS_LOADERS = [
   },
 ];
 
+const IMAGE_LOADERS = {
+  loader: 'url-loader',
+  options: {
+    limit: 10240,
+    fallback: {
+      loader: 'file-loader',
+      options: {
+        name: 'img/[name].[hash:8].[ext]'
+      }
+    }
+  }
+}
 export const baseConfig = {
   mode: 'development',
   resolve: {
@@ -81,6 +93,10 @@ export const baseConfig = {
         test: /\.md$/,
         use: [CACHE_LOADER, 'vue-loader', '@vant/markdown-loader'],
       },
+      {
+        test:/\.(png|jpe?g|gif|webp)(\?.*)?$/,
+        use: [IMAGE_LOADERS, 'file-loader']
+      }
     ],
   },
   plugins: [

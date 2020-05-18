@@ -9,6 +9,7 @@ import { compileJs } from '../compiler/compile-js';
 import { compileSfc } from '../compiler/compile-sfc';
 import { compileStyle } from '../compiler/compile-style';
 import { compilePackage } from '../compiler/compile-package';
+import { compileImage } from '../compiler/compile-image';
 import { genPackageEntry } from '../compiler/gen-package-entry';
 import { genStyleDepsMap } from '../compiler/gen-style-deps-map';
 import { genComponentStyle } from '../compiler/gen-component-style';
@@ -20,11 +21,13 @@ import {
   isSfc,
   isStyle,
   isScript,
+  isImage,
   isDemoDir,
   isTestDir,
   setNodeEnv,
   setModuleEnv,
 } from '../common';
+
 
 async function compileFile(filePath: string) {
   if (isSfc(filePath)) {
@@ -37,6 +40,9 @@ async function compileFile(filePath: string) {
 
   if (isStyle(filePath)) {
     return compileStyle(filePath);
+  }
+  if (isImage(filePath)) {
+    return compileImage(filePath);
   }
 
   return remove(filePath);

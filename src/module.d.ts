@@ -10,3 +10,4 @@ declare module 'html-webpack-plugin';
 declare module 'conventional-changelog';
 declare module '@vant/markdown-vetur';
 declare module '@nuxt/friendly-errors-webpack-plugin';
+declare module 'mime-types';

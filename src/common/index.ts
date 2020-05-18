@@ -20,6 +20,7 @@ export const TEST_REGEXP = new RegExp('\\' + sep + 'test$');
 export const STYLE_REGEXP = /\.(css|less|scss)$/;
 export const SCRIPT_REGEXP = /\.(js|ts|jsx|tsx)$/;
 export const ENTRY_EXTS = ['js', 'ts', 'tsx', 'jsx', 'vue'];
+export const IMAGE_REGXP = /\.(png|jpe?g|gif|webp)(\?.*)?$/
 
 export function removeExt(path: string) {
   return path.replace('.js', '');
@@ -72,6 +73,10 @@ export function isStyle(path: string) {
 
 export function isScript(path: string) {
   return SCRIPT_REGEXP.test(path);
+}
+
+export function isImage(path: string) {
+  return IMAGE_REGXP.test(path);
 }
 
 const camelizeRE = /-(\w)/g;
