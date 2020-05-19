@@ -97,7 +97,7 @@ export const baseConfig = {
       },
       {
         test:/\.(png|jpe?g|gif|webp)(\?.*)?$/,
-        use: [IMAGE_LOADERS, 'file-loader']
+        use: IMAGE_LOADERS
       }
     ],
   },
