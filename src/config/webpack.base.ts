@@ -32,10 +32,12 @@ const IMAGE_LOADERS = {
   loader: 'url-loader',
   options: {
     limit: 10240,
+    esModule: false,
     fallback: {
       loader: 'file-loader',
       options: {
-        name: 'img/[name].[hash:8].[ext]'
+        name: 'img/[name].[hash:8].[ext]',
+        esModule: false
       }
     }
   }
