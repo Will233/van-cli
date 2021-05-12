@@ -89,7 +89,7 @@
     "mime-types": "^2.1.27",
     "ora": "^4.0.4",
     "portfinder": "^1.0.26",
-    "postcss": "^7.0.28",
+    "postcss": "^8.2.10",
     "postcss-loader": "^3.0.0",
     "prettier": "^2.0.5",
     "release-it": "^13.5.7",
